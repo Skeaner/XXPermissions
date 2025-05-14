@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 apply from : '../common.gradle'
+apply from : './maven_publish.gradle'
 
 android {
 
@@ -27,5 +29,5 @@ android {
 
 dependencies {
     // noinspection GradleCompatible
-    compileOnly 'com.android.support:support-fragment:24.2.0'
+    compileOnly 'androidx.appcompat:appcompat:1.4.2'
 }

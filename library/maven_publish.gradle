@@ -1,0 +1,18 @@
+group = "com.github.Skeaner"
+version = "21.3"
+
+task androidSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components["release"]
+                artifact androidSourcesJar
+            }
+        }
+    }
+}
